@@ -20,16 +20,13 @@ Public Class Form1
     Private WithEvents exitButton As Button
 
     Public Sub New()
-        ' Set up form properties
         Me.Text = "Form with Text Field and Toggles"
         Me.Size = New Size(400, 400)
 
-        ' Call the InitializeComponent method to initialize the form controls
         InitializeComponent()
     End Sub
 
     Private Sub InitializeComponent()
-        ' Create labels, text box, and checkboxes
         nameLabel = New Label()
         nameLabel.Text = "Name:"
         nameLabel.Location = New Point(20, 20)
@@ -39,7 +36,6 @@ Public Class Form1
         nameTextBox.Location = New Point(100, 20)
         nameTextBox.Size = New Size(200, 20)
 
-        ' Create radio buttons for font family
         fontFamilyGaramond = New RadioButton()
         fontFamilyGaramond.Text = "Garamond"
         fontFamilyGaramond.Location = New Point(20, 50)
@@ -52,7 +48,6 @@ Public Class Form1
         fontFamilyTahoma.Text = "Tahoma"
         fontFamilyTahoma.Location = New Point(220, 50)
 
-        ' Create radio buttons for font style
         fontStyleItalic = New RadioButton()
         fontStyleItalic.Text = "Italic"
         fontStyleItalic.Location = New Point(20, 80)
@@ -65,7 +60,6 @@ Public Class Form1
         fontStyleBoldItalic.Text = "Bold Italic"
         fontStyleBoldItalic.Location = New Point(220, 80)
 
-        ' Create radio buttons for font color
         fontColorRed = New RadioButton()
         fontColorRed.Text = "Red"
         fontColorRed.Location = New Point(20, 110)
@@ -78,41 +72,33 @@ Public Class Form1
         fontColorGreen.Text = "Green"
         fontColorGreen.Location = New Point(220, 110)
 
-        ' Create display image checkbox
         displayImageCheckbox = New CheckBox()
         displayImageCheckbox.Text = "Display Image"
         displayImageCheckbox.Location = New Point(20, 140)
 
-        ' Create add image button
         addButton = New Button()
         addButton.Text = "Load Image"
         addButton.Location = New Point(150, 140)
 
-        ' Create exit button
         exitButton = New Button()
         exitButton.Text = "Exit"
         exitButton.Location = New Point(280, 140)
 
-        ' Attach event handlers
         AddHandler addButton.Click, AddressOf AddImageButton_Click
         AddHandler exitButton.Click, AddressOf ExitButton_Click
 
-        ' Attach event handlers for font family radio buttons
         AddHandler fontFamilyGaramond.CheckedChanged, AddressOf FontFamily_CheckedChanged
         AddHandler fontFamilyMagneto.CheckedChanged, AddressOf FontFamily_CheckedChanged
         AddHandler fontFamilyTahoma.CheckedChanged, AddressOf FontFamily_CheckedChanged
 
-        ' Attach event handlers for font style radio buttons
         AddHandler fontStyleItalic.CheckedChanged, AddressOf FontStyle_CheckedChanged
         AddHandler fontStyleBold.CheckedChanged, AddressOf FontStyle_CheckedChanged
         AddHandler fontStyleBoldItalic.CheckedChanged, AddressOf FontStyle_CheckedChanged
 
-        ' Attach event handlers for font color radio buttons
         AddHandler fontColorRed.CheckedChanged, AddressOf FontColor_CheckedChanged
         AddHandler fontColorBlue.CheckedChanged, AddressOf FontColor_CheckedChanged
         AddHandler fontColorGreen.CheckedChanged, AddressOf FontColor_CheckedChanged
 
-        ' Add controls to the form
         Me.Controls.Add(nameLabel)
         Me.Controls.Add(nameTextBox)
         Me.Controls.Add(fontFamilyGaramond)
